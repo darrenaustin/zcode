@@ -1,0 +1,131 @@
+     |  * |  op2 |   1 |    |je              a b ?(label)|je              
+     |  * |  op2 |   2 |    |jl              a b ?(label)|jl              
+     |  * |  op2 |   3 |    |jg              a b ?(label)|jg              
+     |  * |  op2 |   4 |    |dec_chk         (variable) value ?(label)|dec_chk         
+     |  * |  op2 |   5 |    |inc_chk         (variable) value ?(label)|inc_chk         
+     |  * |  op2 |   6 |    |jin             obj1 obj2 ?(label)|jin             
+     |  * |  op2 |   7 |    |test            bitmap flags ?(label)|test            
+   * |    |  op2 |   8 |    |or              a b -> (result)|or              
+   * |    |  op2 |   9 |    |and             a b -> (result)|and             
+     |  * |  op2 |   A |    |test_attr       object attribute ?(label)|test_attr       
+     |    |  op2 |   B |    |set_attr        object attribute|set_attr        
+     |    |  op2 |   C |    |clear_attr      object attribute|clear_attr      
+     |    |  op2 |   D |    |store           (variable) value|store           
+     |    |  op2 |   E |    |insert_obj      object destination|insert_obj      
+   * |    |  op2 |   F |    |loadw           array word-index -> (result)|loadw           
+   * |    |  op2 |  10 |    |loadb           array byte-index -> (result)|loadb           
+   * |    |  op2 |  11 |    |get_prop        object property -> (result)|get_prop        
+   * |    |  op2 |  12 |    |get_prop_addr   object property -> (result)|get_prop_addr   
+   * |    |  op2 |  13 |    |get_next_prop   object property -> (result)|get_next_prop   
+   * |    |  op2 |  14 |    |add             a b -> (result)|add             
+   * |    |  op2 |  15 |    |sub             a b -> (result)|sub             
+   * |    |  op2 |  16 |    |mul             a b -> (result)|mul             
+   * |    |  op2 |  17 |    |div             a b -> (result)|div             
+   * |    |  op2 |  18 |    |mod             a b -> (result)|mod             
+   * |    |  op2 |  19 | 4  |call_2s         routine arg1 -> (result)|call_2s         
+     |    |  op2 |  1A | 5  |call_2n         routine arg1|call_2n         
+     |    |  op2 |  1B | 5  |set_colour      foreground background|set_colour
+     |    |  op2 |  1B | 6  |set_colour      foreground background|set_colour
+     |    |  op2 |  1C | 5 8|throw           value stack-frame|throw           
+     |  * |  op1 |  0 |    |jz              a ?(label)|jz              
+   * |  * |  op1 |  1 |    |get_sibling     object -> (result) ?(label)|get_sibling     
+   * |  * |  op1 |  2 |    |get_child       object -> (result) ?(label)|get_child       
+   * |    |  op1 |  3 |    |get_parent      object -> (result)|get_parent      
+   * |    |  op1 |  4 |    |get_prop_len    property-address -> (result)|get_prop_len    
+     |    |  op1 |  5 |    |inc             (variable)|inc             
+     |    |  op1 |  6 |    |dec             (variable)|dec             
+     |    |  op1 |  7 |    |print_addr      byte-address-of-string|print_addr      
+   * |    |  op1 |  8 | 4 8|call_1s         routine -> (result)|call_1s         
+     |    |  op1 |  9 |    |remove_obj      object|remove_obj      
+     |    |  op1 |  A |    |print_obj       object|print_obj       
+     |    |  op1 |  B |    |ret             value|ret             
+     |    |  op1 |  C |    |jump            ?(label)|jump            
+     |    |  op1 |  D |    |print_paddr     packed-address-of-string|print_paddr     
+   * |    |  op1 |  E |    |load            (variable) -> (result)|load            
+   * |    |  op1 |  F | 1 4|not             value -> (result)|not             
+     |    |  op1 |  F | 5 8|call_1n         routine|call_1n         
+     |    |  op0 |  0 |    |rtrue|rtrue
+     |    |  op0 |  1 |    |rfalse|rfalse
+     |    |  op0 |  2 |    |print           (literal-string)|print           
+     |    |  op0 |  3 |    |print_ret       (literal-string)|print_ret       
+     |    |  op0 |  4 |    |nop|nop
+     |  * |  op0 |  5 | 1 3|save            ?(label)|save            
+     |    |  op0 |  5 | 4  |save            -> (result)|save            
+     |  * |  op0 |  6 | 1 3|restore         ?(label)|restore         
+     |    |  op0 |  6 | 4  |restore         -> (result)|restore         
+     |    |  op0 |  7 |    |restart|restart
+     |    |  op0 |  8 |    |ret_popped|ret_popped
+     |    |  op0 |  9 | 1  |pop|pop
+   * |    |  op0 |  9 | 5 8|catch           -> (result)|catch           
+     |    |  op0 |  A |    |quit|quit
+     |    |  op0 |  B |    |new_line|new_line
+     |    |  op0 |  C | 3  |show_status|show_status
+     |  * |  op0 |  D | 3 8|verify          ?(label)|verify          
+     |    |  op0 |  E | 5 8|[first byte of extended opcode]|extended
+     |  * |  op0 |  F | 5 8|piracy          ?(label)|piracy          
+   * |    |  var |  0 | 1 3|call            routine ...0 to 3 args... -> (result)|call            
+   * |    |  var |  0 | 4 8|call_vs         routine ...0 to 3 args... -> (result)|call_vs         
+     |    |  var |  1 |    |storew          array word-index value|storew          
+     |    |  var |  2 |    |storeb          array byte-index value|storeb          
+     |    |  var |  3 |    |put_prop        object property value|put_prop        
+     |    |  var |  4 | 1 3|sread           text parse|sread           
+     |    |  var |  4 | 4  |sread           text parse time routine|sread           
+   * |    |  var |  4 | 5 8|aread           text parse time routine -> (result)|aread           
+     |    |  var |  5 |    |print_char      output-character-code|print_char      
+     |    |  var |  6 |    |print_num       value|print_num       
+   * |    |  var |  7 |    |random          range -> (result)|random          
+     |    |  var |  8 |    |push            value|push            
+     |    |  var |  9 | 1 5|pull            (variable)|pull            
+   * |    |  var |  9 | 6 8|pull            stack -> (result)|pull            
+     |    |  var |  A | 3 8|split_window    lines|split_window    
+     |    |  var |  B | 3 8|set_window      window|set_window      
+   * |    |  var |  C | 4 8|call_vs2        routine ...0 to 7 args... -> (result)|call_vs2        
+     |    |  var |  D | 4 8|erase_window    window|erase_window    
+     |    |  var |  E | 4 5|erase_line      value|erase_line      
+     |    |  var |  E | 6 8|erase_line      pixels|erase_line      
+     |    |  var |  F | 4 5|set_cursor      line column|set_cursor      
+     |    |  var |  F | 6 8|set_cursor      line column window|set_cursor      
+     |    |  var | 10 | 4 8|get_cursor      array|get_cursor      
+     |    |  var | 11 | 4 8|set_text_style  style|set_text_style  
+     |    |  var | 12 | 4 8|buffer_mode     flag|buffer_mode     
+     |    |  var | 13 | 3 4|output_stream   number|output_stream   
+     |    |  var | 13 | 5  |output_stream   number table|output_stream   
+     |    |  var | 13 | 6 8|output_stream   number table width|output_stream   
+     |    |  var | 14 | 3 8|input_stream    number|input_stream    
+     |    |  var | 15 | 5 8|sound_effect    number effect volume routine|sound_effect    
+   * |    |  var | 16 | 4 8|read_char       1 time routine -> (result)|read_char       
+   * |   *|  var | 17 | 4 8|scan_table      x table len form -> (result)|scan_table      
+   * |    |  var | 18 | 5 8|not             value -> (result)|not             
+     |    |  var | 19 | 5 8|call_vn         routine ...up to 3 args...|call_vn         
+     |    |  var | 1A | 5 8|call_vn2        routine ...up to 7 args...|call_vn2        
+     |    |  var | 1B | 5 8|tokenise        text parse dictionary flag|tokenise        
+     |    |  var | 1C | 5 8|encode_text     zscii-text length from coded-text|encode_text     
+     |    |  var | 1D | 5 8|copy_table      first second size|copy_table      
+     |    |  var | 1E | 5 8|print_table     zscii-text width height skip|print_table     
+     |   *|  var | 1F | 5 8|check_arg_count argument-number|check_arg_count 
+   * |    |  ext |   0 | 5 8|save            table bytes name -> (result)|save            
+   * |    |  ext |   1 | 5 8|restore         table bytes name -> (result)|restore         
+   * |    |  ext |   2 | 5 8|log_shift       number places -> (result)|log_shift       
+   * |    |  ext |   3 | 5 8|art_shift       number places -> (result)|art_shift       
+   * |    |  ext |   4 | 5 8|set_font        font -> (result)|set_font        
+     |    |  ext |   5 | 6 8|draw_picture    picture-number y x|draw_picture    
+     |   *|  ext |   6 | 6 8|picture_data    picture-number array ?(label)|picture_data    
+     |    |  ext |   7 | 6 8|erase_picture   picture-number y x|erase_picture   
+     |    |  ext |   8 | 6 8|set_margins     left right window|set_margins     
+   * |    |  ext |   9 | 5 8|save_undo       -> (result)|save_undo       
+   * |    |  ext |   A | 5 8|restore_undo    -> (result)|restore_undo    
+     |    |  ext |   B | 5 8|print_unicode   char-number|print_unicode   
+     |    |  ext |   C | 5 8|check_unicode   char-number -> (result)|check_unicode   
+     |    |  ext |  10 | 6 8|move_window     window y x|move_window     
+     |    |  ext |  11 | 6 8|window_size     window y x|window_size     
+     |    |  ext |  12 | 6 8|window_style    window flags operation|window_style    
+   * |    |  ext |  13 | 6 8|get_wind_prop   window property-number -> (result)|get_wind_prop   
+     |    |  ext |  14 | 6 8|scroll_window   window pixels|scroll_window   
+     |    |  ext |  15 | 6 8|pop_stack       items stack|pop_stack       
+     |    |  ext |  16 | 6 8|read_mouse      array|read_mouse      
+     |    |  ext |  17 | 6 8|mouse_window    window|mouse_window    
+     |   *|  ext |  18 | 6 8|push_stack      value stack ?(label)|push_stack      
+     |    |  ext |  19 | 6 8|put_wind_prop   window property-number value|put_wind_prop   
+     |    |  ext |  1A | 6 8|print_form      formatted-table|print_form      
+     |   *|  ext |  1B | 6 8|make_menu       number table ?(label)|make_menu       
+     |    |  ext |  1C | 6 8|picture_table   table|picture_table   

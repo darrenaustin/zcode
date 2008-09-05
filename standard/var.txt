@@ -1,0 +1,32 @@
+ * | | VAR:224| 0 | 1 |call routine ...0 to 3 args... -> (result)|call
+ | | VAR:225| 1 | |storew array word-index value|storew
+ | | VAR:226| 2 | |storeb array byte-index value|storeb
+ | | VAR:227| 3 | |put_prop object property value|put_prop
+ | | VAR:228| 4 | 1 |sread text parse|sread
+ | | VAR:229| 5 | |print_char output-character-code|print_char
+ | | VAR:230| 6 | |print_num value|print_num
+ * | | VAR:231| 7 | |random range -> (result)|random
+ | | VAR:232| 8 | |push value|push
+ | | VAR:233| 9 | 1 |pull (variable)|pull
+ | | VAR:234| A | 3 |split_window lines|split_window
+ | | VAR:235| B | 3 |set_window window|set_window
+ * | | VAR:236| C | 4 |call_vs2 routine ...0 to 7 args... -> (result)|call_vs2
+ | | VAR:237| D | 4 |erase_window window|erase_window
+ | | VAR:238| E |4/- |erase_line value|erase_line
+ | | VAR:239| F | 4 |set_cursor line column|set_cursor
+ | | VAR:240| 10 |4/6 |get_cursor array|get_cursor
+ | | VAR:241| 11 | 4 |set_text_style style|set_text_style
+ | | VAR:242| 12 | 4 |buffer_mode flag|buffer_mode
+ | | VAR:243| 13 | 3 |output_stream number|output_stream
+ | | VAR:244| 14 | 3 |input_stream number|input_stream
+ | | VAR:245| 15 |5/3 |sound_effect number effect volume routine|sound_effect
+ * | | VAR:246| 16 | 4 |read_char 1 time routine -> (result)|read_char
+ * | *| VAR:247| 17 | 4 |scan_table x table len form -> (result)|scan_table
+ * | | VAR:248| 18 |5/6 |not value -> (result)|not
+ | | VAR:249| 19 | 5 |call_vn routine ...up to 3 args...|call_vn
+ | | VAR:250| 1A | 5 |call_vn2 routine ...up to 7 args...|call_vn2
+ | | VAR:251| 1B | 5 |tokenise text parse dictionary flag|tokenise
+ | | VAR:252| 1C | 5 |encode_text zscii-text length from coded-text|encode_text
+ | | VAR:253| 1D | 5 |copy_table first second size|copy_table
+ | | VAR:254| 1E | 5 |print_table zscii-text width height skip|print_table
+ | *| VAR:255| 1F | 5 |check_arg_count argument-number|check_arg_count

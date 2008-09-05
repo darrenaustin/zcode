@@ -1,0 +1,16 @@
+ | * | 1OP:128| 0 | |jz a ?(label)|jz
+ * | * | 1OP:129| 1 | |get_sibling object -> (result) ?(label)|get_sibling
+ * | * | 1OP:130| 2 | |get_child object -> (result) ?(label)|get_child
+ * | | 1OP:131| 3 | |get_parent object -> (result)|get_parent
+ * | | 1OP:132| 4 | |get_prop_len property-address -> (result)|get_prop_len
+ | | 1OP:133| 5 | |inc (variable)|inc
+ | | 1OP:134| 6 | |dec (variable)|dec
+ | | 1OP:135| 7 | |print_addr byte-address-of-string|print_addr
+ * | | 1OP:136| 8 | 4 |call_1s routine -> (result)|call_1s
+ | | 1OP:137| 9 | |remove_obj object|remove_obj
+ | | 1OP:138| A | |print_obj object|print_obj
+ | | 1OP:139| B | |ret value|ret
+ | | 1OP:140| C | |jump ?(label)|jump
+ | | 1OP:141| D | |print_paddr packed-address-of-string|print_paddr
+ * | | 1OP:142| E | |load (variable) -> (result)|load
+ * | | 1OP:143| F |1/4 |not value -> (result)|not

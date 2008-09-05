@@ -1,0 +1,26 @@
+ * | | EXT:0 | 0 | 5 |save table bytes name -> (result)|save
+ * | | EXT:1 | 1 | 5 |restore table bytes name -> (result)|restore
+ * | | EXT:2 | 2 | 5 |log_shift number places -> (result)|log_shift
+ * | | EXT:3 | 3 |5/- |art_shift number places -> (result)|art_shift
+ * | | EXT:4 | 4 | 5 |set_font font -> (result)|set_font
+ | | EXT:5 | 5 | 6 |draw_picture picture-number y x|draw_picture
+ | *| EXT:6 | 6 | 6 |picture_data picture-number array ?(label)|picture_data
+ | | EXT:7 | 7 | 6 |erase_picture picture-number y x|erase_picture
+ | | EXT:8 | 8 | 6 |set_margins left right window|set_margins
+ * | | EXT:9 | 9 | 5 |save_undo -> (result)|save_undo
+ * | | EXT:10| A | 5 |restore_undo -> (result)|restore_undo
+ | | EXT:11| B |5/* |print_unicode char-number|print_unicode
+ | | EXT:12| C |5/* |check_unicode char-number -> (result)|check_unicode
+ | | EXT:16| 10 | 6 |move_window window y x|move_window
+ | | EXT:17| 11 | 6 |window_size window y x|window_size
+ | | EXT:18| 12 | 6 |window_style window flags operation|window_style
+ * | | EXT:19| 13 | 6 |get_wind_prop window property-number -> (result)|get_wind_prop
+ | | EXT:20| 14 | 6 |scroll_window window pixels|scroll_window
+ | | EXT:21| 15 | 6 |pop_stack items stack|pop_stack
+ | | EXT:22| 16 | 6 |read_mouse array|read_mouse
+ | | EXT:23| 17 | 6 |mouse_window window|mouse_window
+ | *| EXT:24| 18 | 6 |push_stack value stack ?(label)|push_stack
+ | | EXT:25| 19 | 6 |put_wind_prop window property-number value|put_wind_prop
+ | | EXT:26| 1A | 6 |print_form formatted-table|print_form
+ | *| EXT:27| 1B | 6 |make_menu number table ?(label)|make_menu
+ | | EXT:28| 1C | 6 |picture_table table|picture_table

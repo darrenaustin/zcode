@@ -1,0 +1,28 @@
+ | * | 2OP:1 | 1 | |je a b ?(label)|je
+ | * | 2OP:2 | 2 | |jl a b ?(label)|jl
+ | * | 2OP:3 | 3 | |jg a b ?(label)|jg
+ | * | 2OP:4 | 4 | |dec_chk (variable) value ?(label)|dec_chk
+ | * | 2OP:5 | 5 | |inc_chk (variable) value ?(label)|inc_chk
+ | * | 2OP:6 | 6 | |jin obj1 obj2 ?(label)|jin
+ | * | 2OP:7 | 7 | |test bitmap flags ?(label)|test
+ * | | 2OP:8 | 8 | |or a b -> (result)|or
+ * | | 2OP:9 | 9 | |and a b -> (result)|and
+ | * | 2OP:10| A | |test_attr object attribute ?(label)|test_attr
+ | | 2OP:11| B | |set_attr object attribute|set_attr
+ | | 2OP:12| C | |clear_attr object attribute|clear_attr
+ | | 2OP:13| D | |store (variable) value|store
+ | | 2OP:14| E | |insert_obj object destination|insert_obj
+ * | | 2OP:15| F | |loadw array word-index -> (result)|loadw
+ * | | 2OP:16| 10 | |loadb array byte-index -> (result)|loadb
+ * | | 2OP:17| 11 | |get_prop object property -> (result)|get_prop
+ * | | 2OP:18| 12 | |get_prop_addr object property -> (result)|get_prop_addr
+ * | | 2OP:19| 13 | |get_next_prop object property -> (result)|get_next_prop
+ * | | 2OP:20| 14 | |add a b -> (result)|add
+ * | | 2OP:21| 15 | |sub a b -> (result)|sub
+ * | | 2OP:22| 16 | |mul a b -> (result)|mul
+ * | | 2OP:23| 17 | |div a b -> (result)|div
+ * | | 2OP:24| 18 | |mod a b -> (result)|mod
+ * | | 2OP:25| 19 | 4 |call_2s routine arg1 -> (result)|call_2s
+ | | 2OP:26| 1A | 5 |call_2n routine arg1|call_2n
+ | | 2OP:27| 1B | 5 |set_colour foreground background|set_colour
+ | | 2OP:28| 1C |5/6 |throw value stack-frame|throw

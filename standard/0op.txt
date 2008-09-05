@@ -1,0 +1,16 @@
+ | | 0OP:176| 0 | |rtrue|rtrue
+ | | 0OP:177| 1 | |rfalse|rfalse
+ | | 0OP:178| 2 | |print (literal-string)|print 
+ | | 0OP:179| 3 | |print_ret (literal-string)|print_ret 
+ | | 0OP:180| 4 |1/- |nop|nop
+ | * | 0OP:181| 5 | 1 |save ?(label)|save 
+ | * | 0OP:182| 6 | 1 |restore ?(label)|restore 
+ | | 0OP:183| 7 | |restart|restart
+ | | 0OP:184| 8 | |ret_popped|ret_popped
+ | | 0OP:185| 9 | 1 |pop|pop
+ | | 0OP:186| A | |quit|quit
+ | | 0OP:187| B | |new_line|new_line
+ | | 0OP:188| C | 3 |show_status|show_status
+ | * | 0OP:189| D | 3 |verify ?(label)|verify 
+ | | 0OP:190| E | 5 |[first byte of extended opcode]|extended
+ | * | 0OP:191| F |5/- |piracy ?(label)|piracy 

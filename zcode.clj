@@ -1,0 +1,16 @@
+;(clojure/in-ns 'zcode)
+;(clojure/refer 'clojure)
+;(lib/use util :relaod binary :reload)
+;(lib/use zstory :reload zmem :reload zmachine :reload zstring :reload zio :reload zins :reload)
+
+(load-file "binary.clj")
+(load-file "util.clj")
+
+(load-file "zstory.clj")
+(load-file "zmem.clj")
+(load-file "zmachine.clj")
+(load-file "zstring.clj")
+(load-file "zdict.clj")
+(load-file "zobj.clj")
+(load-file "zio.clj")
+(load-file "zins.clj")
